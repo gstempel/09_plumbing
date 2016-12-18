@@ -8,9 +8,11 @@ int main() {
   char buffer[MESSAGE_BUFFER_SIZE];
   
   to_client = server_handshake( &from_client );
-  
+
   read( from_client, buffer, sizeof(buffer) );
+  printf("BUFFER: %s\n", buffer);
   process( buffer );
+  printf("BUFFER: %s\n", buffer);
   write( to_client, buffer, sizeof(buffer));
   
   return 0;
