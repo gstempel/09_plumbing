@@ -38,6 +38,35 @@ int server_handshake(int * from_client) {
   return fd2;
 }
 
+/*
+int server_handshake1( char *buffer ) {
+  mkfifo("frodo", 0644);
+  printf("WKP created\n");
+
+  int from_client = open("frodo", O_RDONLY);
+  printf("Server connected to frodo\n");
+
+  read( from_client, buffer, MESSAGE_BUFFER_SIZE );
+  temp[MESSAGE_BUFFER_SIZE] = 0;
+  printf("Private name: %s\n", buffer);
+
+  remove("frodo");
+
+  return from_client;
+}
+
+int server_handshake2( char *buffer, int from_client ) {
+  int to_client = open(buffer, O_WRONLY);
+  write(to_client, "received", strlen("received") + 1);
+
+  read( from_client, buffer, MESSAGE_BUFFER_SIZE );
+  buffer[MESSAGE_BUFFER_SIZE] = 0;
+  printf("Connection confirmed from client: %s\n", buffer);
+
+  return to_client;
+}
+*/
+
 int client_handshake(int * to_server) {
   // #3: create private FIFO
   mkfifo("samwise", 0644);
