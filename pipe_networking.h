@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 
-#define MESSAGE_BUFFER_SIZE 50
+#define MESSAGE_BUFFER_SIZE 150
 
 int server_handshake(int * client);
 
